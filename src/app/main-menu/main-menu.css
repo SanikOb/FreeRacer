@@ -21,7 +21,6 @@
     overflow: hidden;
   }
   
-  /* Animated background effect */
   .menu-container::before {
     content: '';
     position: absolute;

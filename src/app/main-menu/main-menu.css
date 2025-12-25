@@ -1,0 +1,284 @@
+.menu button {
+    display: block;
+}
+
+:host {
+    display: block;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #2c3e50 0%, #1a2530 100%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow-x: hidden;
+  }
+  
+  .menu-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  /* Animated background effect */
+  .menu-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+      radial-gradient(circle at 20% 80%, rgba(241, 196, 15, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(241, 196, 15, 0.05) 0%, transparent 50%),
+      radial-gradient(circle at 40% 40%, rgba(241, 196, 15, 0.07) 0%, transparent 50%);
+    animation: pulse 8s ease-in-out infinite alternate;
+    z-index: 0;
+  }
+  
+  @keyframes pulse {
+    0%, 100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.8;
+      transform: scale(1.05);
+    }
+  }
+  
+  /* Хедер*/
+  .menu-header {
+    text-align: center;
+    margin-top: 80px;
+    margin-bottom: 60px;
+    position: relative;
+    z-index: 1;
+    animation: slideDown 0.8s ease-out;
+  }
+  
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .menu-header h1 {
+    font-size: 6rem;
+    font-weight: 800;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin: 0;
+    text-shadow: 
+      0 2px 10px rgba(0, 0, 0, 0.3),
+      0 0 20px rgba(241, 196, 15, 0.2),
+      0 0 30px rgba(241, 196, 15, 0.1);
+    position: relative;
+    display: inline-block;
+  }
+  
+  .menu-header h1::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, #f1c40f, transparent);
+    border-radius: 2px;
+    box-shadow: 0 0 10px rgba(241, 196, 15, 0.5);
+  }
+  
+  /* Neon effect for the title */
+  .neon-text {
+    color: #fff;
+    text-shadow: 
+      0 0 5px #fff,
+      0 0 10px #fff,
+      0 0 15px #fff,
+      0 0 20px #f1c40f,
+      0 0 35px #f1c40f,
+      0 0 40px #f1c40f,
+      0 0 50px #f1c40f,
+      0 0 75px #f1c40f;
+    animation: neonGlow 1.5s ease-in-out infinite alternate;
+  }
+  
+  @keyframes neonGlow {
+    from {
+      text-shadow: 
+        0 0 5px #fff,
+        0 0 10px #fff,
+        0 0 15px #fff,
+        0 0 20px #f1c40f,
+        0 0 35px #f1c40f,
+        0 0 40px #f1c40f,
+        0 0 50px #f1c40f,
+        0 0 75px #f1c40f;
+    }
+    to {
+      text-shadow: 
+        0 0 10px #fff,
+        0 0 20px #fff,
+        0 0 30px #fff,
+        0 0 40px #f1c40f,
+        0 0 70px #f1c40f,
+        0 0 80px #f1c40f,
+        0 0 100px #f1c40f,
+        0 0 150px #f1c40f;
+    }
+  }
+  
+  .menu-subtitle {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.2rem;
+    margin-top: 25px;
+    letter-spacing: 1px;
+    font-weight: 300;
+  }
+  
+  /* Кнопки */
+  .menu-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    animation: fadeIn 1s ease-out 0.3s both;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .menu-button {
+    position: relative;
+    background: linear-gradient(145deg, rgba(241, 196, 15, 0.9), rgba(241, 196, 15, 0.7));
+    color: #2c3e50;
+    border: none;
+    padding: 18px 45px;
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 
+      0 5px 15px rgba(0, 0, 0, 0.3),
+      0 0 20px rgba(241, 196, 15, 0.3),
+      inset 0 2px 0 rgba(255, 255, 255, 0.3);
+    overflow: hidden;
+    min-width: 220px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+  }
+  
+  .menu-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: 0.5s;
+  }
+  
+  .menu-button:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 
+      0 8px 25px rgba(0, 0, 0, 0.4),
+      0 0 30px rgba(241, 196, 15, 0.6),
+      inset 0 2px 0 rgba(255, 255, 255, 0.3);
+    background: linear-gradient(145deg, rgba(241, 196, 15, 1), rgba(241, 196, 15, 0.9));
+    color: #1a2530;
+  }
+  
+  .menu-button:hover::before {
+    left: 100%;
+  }
+  
+  .menu-button:active {
+    transform: translateY(-2px) scale(1.02);
+    transition: all 0.1s ease;
+  }
+  
+  .menu-button span {
+    position: relative;
+    z-index: 1;
+  }
+  
+  
+  .menu-button:hover::after {
+    opacity: 1;
+    right: 20px;
+  }
+ 
+  @media (max-width: 768px) {
+    .menu-header h1 {
+      font-size: 3rem;
+      letter-spacing: 2px;
+    }
+    
+    .menu-button {
+      padding: 16px 35px;
+      font-size: 1.2rem;
+      min-width: 200px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .menu-header h1 {
+      font-size: 2.5rem;
+      letter-spacing: 1px;
+    }
+    
+    .menu-header h1::after {
+      width: 150px;
+    }
+    
+    .menu-button {
+      padding: 14px 30px;
+      font-size: 1.1rem;
+      min-width: 180px;
+    }
+    
+    .menu-container {
+      padding: 15px;
+    }
+  }
+  
+  @keyframes buttonPulse {
+    0%, 100% {
+      box-shadow: 
+        0 5px 15px rgba(0, 0, 0, 0.3),
+        0 0 20px rgba(241, 196, 15, 0.3);
+    }
+    50% {
+      box-shadow: 
+        0 5px 15px rgba(0, 0, 0, 0.3),
+        0 0 25px rgba(241, 196, 15, 0.5);
+    }
+  }
+  
+  .menu-button.loading {
+    animation: buttonPulse 2s infinite;
+  }
